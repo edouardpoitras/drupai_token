@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains \Drupal\drupai_token\drupai_token.module.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function drupai_token_help($route_name) {
+  switch ($route_name) {
+    case 'drupai/help':
+      $return  = "<h3>Drupai Token</h3>";
+      $return  .= "<p>A Drupai plugin that allows for token replacement of text/voice queries. Whenever the text 'token NUMBER' is found, this plugin will replace that part of the text with the token value found for that ID.</p>";
+      $return .= "<p>Often used for things like names, places, or words that your speech handler simply can't get right. Could also come in handy if you want to 'save' a really long bit of text for re-use.</p>";
+      $return .= "<p>Will modify the client provided text in the AFTER_READY_TEXT event, before the PROCESS_TEXT event gets dispatched so that all plugins have the token-replaced text. This means you must be careful when deleting or getting tokens, as your query of say 'delete token 5' may be converted to 'delete <token 5 value>' before it gets processed by this plugin's PROCESS_TEXT.  All that to say is if you want to delete/get a token value outside of the web UI, you should say 'token number 3' instead of 'token 3'</p>";
+      $return .= "<p>You can list the existing tokens in one of two ways:<ul><li>Via client input with text/audio that contains the work 'token' and a few other keywords like 'list' or 'enumerate'</li><li>By browsing to /drupai/tokens</li></ul><br />Example: 'list tokens', 'what are the available tokens', 'tokens', etc</p>";
+      $return .= "<p>You can create new tokens in one of two ways:<ul><li>Via client input with text/audio that contains both the words 'token' and 'create' or 'new'</li><li>By browsing to /drupai/tokens and clicking on 'Add Token'</li></ul><br />Example: 'create new token', 'new token with id 8'</p>";
+      $return .= "<p>You can edit tokens by browsing to /drupai/tokens and using the edit link.</p>";
+      $return .= "You can delete tokens in one of two ways:<ul><li>Via client input with text/audio that contains both the word 'token' and 'delete' or 'remove'</li><li>By browsing to /drupai/tokens and using the delete link</li></ul><br />Example: 'delete token with id 3', 'the token with id 8 sucks, delete it please'</p>";
+      return $return;
+  }
+}

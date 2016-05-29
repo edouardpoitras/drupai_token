@@ -1,0 +1,8 @@
+name: 'Drupai Token'
+type: module
+description: 'Drupai plugin that allows for token replacement in voice/text queries'
+package: Drupai
+dependencies:
+  - drupai
+core: 8.x
+

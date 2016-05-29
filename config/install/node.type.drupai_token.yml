@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Drupai Token'
+type: drupai_token
+description: 'A Drupai token used for voice/text replacement of client inputs.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true
+

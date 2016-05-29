@@ -1,0 +1,6 @@
+services:
+  drupai_token.event_subscriber:
+    class: Drupal\drupai_token\Plugin\DrupaiPlugin\DrupaiTokenPlugin
+    arguments: [[], '', '', '@drupai.plugin_helper']
+    tags:
+      - { name: event_subscriber }

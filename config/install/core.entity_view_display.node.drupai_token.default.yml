@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.drupai_token.field_token_id
+    - node.type.drupai_token
+  module:
+    - user
+id: node.drupai_token.default
+targetEntityType: node
+bundle: drupai_token
+mode: default
+content:
+  field_token_id:
+    weight: 101
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
+
